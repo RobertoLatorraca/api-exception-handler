@@ -11,7 +11,7 @@
 	<groupId>ar.latorraca</groupId>
 	<artifactId>exception-api</artifactId>
 	<version>1.0.0-RELEASE</version>
-	<name>exception-api</name>
+	<name>api-exception-handler</name>
 	<description>Global API Controller Exception Handler</description>
 
 	<properties>
