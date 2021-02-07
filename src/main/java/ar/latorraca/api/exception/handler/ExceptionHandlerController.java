@@ -24,9 +24,20 @@ public class ExceptionHandlerController {
     						.build();
     }
 
+	@ResponseStatus(HttpStatus.METHOD_NOT_ALLOWED)
+    @ExceptionHandler({MethodNotAllowed.class,
+				        org.springframework.web.HttpRequestMethodNotSupportedException.class})
+    @ResponseBody
+    public HttpErrorInfo handleMethodNotAllowedException(HttpServletRequest request, Exception exception) {
+    	return HttpErrorInfo.builder()
+    						.httpStatus(HttpStatus.METHOD_NOT_ALLOWED)
+    						.errorText(exception.getMessage())
+    						.requestURL(request.getRequestURL().toString())
+    						.build();
+    }
+	
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler({BadRequestException.class,
-				        org.springframework.web.HttpRequestMethodNotSupportedException.class,
 				        org.springframework.web.bind.MethodArgumentNotValidException.class,
 				        org.springframework.web.bind.MissingRequestHeaderException.class,
 				        org.springframework.web.bind.MissingServletRequestParameterException.class,
