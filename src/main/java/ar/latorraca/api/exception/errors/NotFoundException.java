@@ -10,6 +10,7 @@ public class NotFoundException extends RuntimeException {
 	private static final String ERROR_TYPE = "Error (404) Not Found Exception.";
 	
 	public NotFoundException() {
+		// For Spring framework
 		super(ERROR_TYPE);
 	}
 	

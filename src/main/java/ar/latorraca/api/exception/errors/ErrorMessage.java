@@ -8,14 +8,14 @@ import ar.latorraca.api.exception.errors.ErrorMessageBuilder.ErrorText;
 import ar.latorraca.api.exception.errors.ErrorMessageBuilder.Optionals;
 import ar.latorraca.api.exception.errors.ErrorMessageBuilder.RequestURL;
 
-public class HttpErrorInfo {
+public class ErrorMessage {
 
 	private ZonedDateTime timeStamp;
 	private HttpStatus httpStatus;
 	private String errorText;
 	private String requestURL;
 	
-	private HttpErrorInfo() {
+	private ErrorMessage() {
 		this.timeStamp = ZonedDateTime.now();
 	}
 	
@@ -56,10 +56,10 @@ public class HttpErrorInfo {
 											ErrorMessageBuilder.RequestURL,
 											ErrorMessageBuilder.Optionals {
 		
-		private HttpErrorInfo errorMessage;
+		private ErrorMessage errorMessage;
 		
 		public Builder() {
-			this.errorMessage = new HttpErrorInfo();
+			this.errorMessage = new ErrorMessage();
 		}
 
 		@Override
@@ -81,7 +81,7 @@ public class HttpErrorInfo {
 		}		
 
 		@Override
-		public HttpErrorInfo build() {
+		public ErrorMessage build() {
 			return this.errorMessage;
 		}
 

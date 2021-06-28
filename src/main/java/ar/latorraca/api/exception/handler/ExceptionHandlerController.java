@@ -16,8 +16,8 @@ public class ExceptionHandlerController {
 	@ResponseStatus(HttpStatus.CONFLICT)
     @ExceptionHandler({ConflictException.class})
     @ResponseBody
-    public HttpErrorInfo handleConflictException(HttpServletRequest request, Exception exception) {
-		return HttpErrorInfo.builder()
+    public ErrorMessage handleConflictException(HttpServletRequest request, Exception exception) {
+		return ErrorMessage.builder()
     						.httpStatus(HttpStatus.CONFLICT)
     						.errorText(exception.getMessage())
     						.requestURL(request.getRequestURL().toString())
@@ -28,8 +28,8 @@ public class ExceptionHandlerController {
     @ExceptionHandler({MethodNotAllowed.class,
 				        org.springframework.web.HttpRequestMethodNotSupportedException.class})
     @ResponseBody
-    public HttpErrorInfo handleMethodNotAllowedException(HttpServletRequest request, Exception exception) {
-    	return HttpErrorInfo.builder()
+    public ErrorMessage handleMethodNotAllowedException(HttpServletRequest request, Exception exception) {
+    	return ErrorMessage.builder()
     						.httpStatus(HttpStatus.METHOD_NOT_ALLOWED)
     						.errorText(exception.getMessage())
     						.requestURL(request.getRequestURL().toString())
@@ -44,8 +44,8 @@ public class ExceptionHandlerController {
 				        org.springframework.web.method.annotation.MethodArgumentTypeMismatchException.class,
 				        org.springframework.http.converter.HttpMessageNotReadableException.class})
     @ResponseBody
-    public HttpErrorInfo handleBadRequestException(HttpServletRequest request, Exception exception) {
-    	return HttpErrorInfo.builder()
+    public ErrorMessage handleBadRequestException(HttpServletRequest request, Exception exception) {
+    	return ErrorMessage.builder()
     						.httpStatus(HttpStatus.BAD_REQUEST)
     						.errorText(exception.getMessage())
     						.requestURL(request.getRequestURL().toString())
@@ -55,8 +55,8 @@ public class ExceptionHandlerController {
 	@ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler({NotFoundException.class})
     @ResponseBody
-    public HttpErrorInfo handleNotFoundException(HttpServletRequest request, Exception exception) {
-    	return HttpErrorInfo.builder()
+    public ErrorMessage handleNotFoundException(HttpServletRequest request, Exception exception) {
+    	return ErrorMessage.builder()
     						.httpStatus(HttpStatus.NOT_FOUND)
     						.errorText(exception.getMessage())
     						.requestURL(request.getRequestURL().toString())
@@ -66,8 +66,8 @@ public class ExceptionHandlerController {
 	@ResponseStatus(HttpStatus.FORBIDDEN)
     @ExceptionHandler({ForbiddenException.class})
     @ResponseBody
-    public HttpErrorInfo handleForbiddenException(HttpServletRequest request, Exception exception) {
-    	return HttpErrorInfo.builder()
+    public ErrorMessage handleForbiddenException(HttpServletRequest request, Exception exception) {
+    	return ErrorMessage.builder()
     						.httpStatus(HttpStatus.FORBIDDEN)
     						.errorText(exception.getMessage())
     						.requestURL(request.getRequestURL().toString())
@@ -83,8 +83,8 @@ public class ExceptionHandlerController {
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler({Exception.class})
     @ResponseBody
-    public HttpErrorInfo handleInternalServerError(HttpServletRequest request, Exception exception) {
-    	return HttpErrorInfo.builder()
+    public ErrorMessage handleInternalServerError(HttpServletRequest request, Exception exception) {
+    	return ErrorMessage.builder()
     						.httpStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     						.errorText(exception.getMessage())
     						.requestURL(request.getRequestURL().toString())

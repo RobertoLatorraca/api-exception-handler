@@ -17,7 +17,7 @@ public interface ErrorMessageBuilder {
 	}
 	
 	interface Optionals {
-		HttpErrorInfo build();
+		ErrorMessage build();
 	}
 
 }
