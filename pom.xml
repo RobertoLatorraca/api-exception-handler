@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>ar.latorraca</groupId>
 	<artifactId>exception-api</artifactId>
-	<version>1.1.0-SNAPSHOT</version>
+	<version>1.2.0-RELEASE</version>
 	<name>api-exception-handler</name>
 	<description>Global API Controller Exception Handler</description>
 
