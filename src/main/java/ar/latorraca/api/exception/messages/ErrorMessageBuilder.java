@@ -1,4 +1,4 @@
-package ar.latorraca.api.exception.errors;
+package ar.latorraca.api.exception.messages;
 
 import org.springframework.http.HttpStatus;
 

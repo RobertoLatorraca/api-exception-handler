@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import ar.latorraca.api.exception.errors.*;
+import ar.latorraca.api.exception.messages.ErrorMessage;
 
 @ControllerAdvice
 public class ExceptionHandlerController {

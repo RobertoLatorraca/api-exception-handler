@@ -1,12 +1,12 @@
-package ar.latorraca.api.exception.errors;
+package ar.latorraca.api.exception.messages;
 
 import java.time.ZonedDateTime;
 
 import org.springframework.http.HttpStatus;
 
-import ar.latorraca.api.exception.errors.ErrorMessageBuilder.ErrorText;
-import ar.latorraca.api.exception.errors.ErrorMessageBuilder.Optionals;
-import ar.latorraca.api.exception.errors.ErrorMessageBuilder.RequestURL;
+import ar.latorraca.api.exception.messages.ErrorMessageBuilder.ErrorText;
+import ar.latorraca.api.exception.messages.ErrorMessageBuilder.Optionals;
+import ar.latorraca.api.exception.messages.ErrorMessageBuilder.RequestURL;
 
 public class ErrorMessage {
 
